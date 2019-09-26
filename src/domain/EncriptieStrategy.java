@@ -7,10 +7,10 @@ public abstract class EncriptieStrategy {
     }
 
 
-    public abstract void encrypteer(String string);
+    public abstract String encrypteer(String string);
 
 
-    public abstract String decrypteer();
+    public abstract String decrypteer(String string);
 
 
 }
