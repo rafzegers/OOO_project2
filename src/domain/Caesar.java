@@ -1,6 +1,7 @@
 package domain;
 
-public class Caesar extends EncriptieStrategy{
+public class Caesar implements Strategy {
+
     private static final String alphabet = "abcdefghijklmnopqrstuvwxyz";
     private int n = (int) Math.floor(Math.random()*26);
 
@@ -31,7 +32,4 @@ public class Caesar extends EncriptieStrategy{
         return "Caeser";
     }
 
-    public void setN(int n){
-        this.n = (n % 26 + 26) % 26;
-    }
 }

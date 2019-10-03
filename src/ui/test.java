@@ -1,12 +1,12 @@
 package ui;
 
 import domain.Caesar;
-import domain.EncriptieStrategy;
+import domain.Strategy;
 
 public class test {
     public static void main(String[]args){
 
-        EncriptieStrategy a = new Caesar();
+        Strategy a = new Caesar();
 
         System.out.println(a.encrypteer("hallo") );
 
