@@ -1,36 +1,37 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+public class Caesar extends EncriptieStrategy{
+    private static final String alphabet = "abcdefghijklmnopqrstuvwxyz";
+    private int n = (int) Math.floor(Math.random()*26);
 
-public class Caesar extends EncriptieStrategy {
-
-    private HashMap<String, String> sleutel = new HashMap<>();
-
-
-
-    public Caesar(){
-        super();
-
-        sleutel.put("a","b");
-
+    public String encrypteer(String message){
+        return cipher(message,this.n);
     }
 
-    @Override
-    public String encrypteer(String string) {
+    public String decrypteer(String message){
+        return cipher(message,26 - this.n);
+    }
 
-
-        char[] array = string.toCharArray();
-
-        for(int i=0 ; i < array.length ; i++){
-            array[0] = array[1];
+    private String cipher(String message,int n){
+        String result = "";
+        for (char c : message.toLowerCase().toCharArray()){
+            if (alphabet.indexOf(c) >= 0){
+                int index = (alphabet.indexOf(c) + n) % 26;
+                result += alphabet.charAt(index);
+            }
+            if (c == ' '){
+                result += " ";
+            }
         }
-
-        return new String(array) ;
+        return result;
     }
 
     @Override
-    public String decrypteer(String string) {
-        return null;
+    public String toString(){
+        return "Caeser";
+    }
+
+    public void setN(int n){
+        this.n = (n % 26 + 26) % 26;
     }
 }
