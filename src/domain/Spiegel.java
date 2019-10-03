@@ -10,6 +10,6 @@ public class Spiegel {
         String tussentekst = "";
         for (int i = tekst.length()-1; i >= 0 ; i--)
             tussentekst += tekst.charAt(i);
-        return tussentekst;
+         return tussentekst;
     }
 }
