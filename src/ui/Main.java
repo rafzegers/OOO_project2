@@ -13,8 +13,8 @@ public class Main {
         Context caeserCodeer = new Context("Hallo dit is een van de testen");
 
         spiegelCodeer.setStrategy(new Spiegel());
-        spiegelCodeer.setStrategy(new Spiegel());
-        spiegelCodeer.setStrategy(new Caesar());
+        spiegeldecodeer.setStrategy(new Spiegel());
+        caeserCodeer.setStrategy(new Caesar());
 
 
         System.out.println(spiegelCodeer.encrypteer());
